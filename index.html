@@ -33,7 +33,8 @@
         <h2>📍 中西區 (一級戰區)</h2>
         <div class="cards-container">
             <a href="https://www.google.com/maps/search/?api=1&query=六千泓佐土產牛肉" target="_blank" class="card">
-                <img src="a.jpg" alt="六千牛肉湯"> <div class="card-content">
+                <img src="a.jpg" alt="六千牛肉湯">
+                <div class="card-content">
                     <h3>六千泓佐土產牛肉</h3>
                     <p>傳說中要凌晨四點拿號碼牌的店，為了那第一鍋湯，早起值得！</p>
                     <span class="tag">早鳥限定</span>
@@ -120,34 +121,26 @@
 
     <script>
         function filterSelection(category) {
-            // 1. 取得所有 class 為 shop-list 的區塊
             var sections = document.getElementsByClassName("shop-list");
-
-            // 2. 判斷：如果是 'all'，就全部顯示；否則就檢查 id
             for (var i = 0; i < sections.length; i++) {
                 if (category == 'all') {
                     sections[i].style.display = "block";
                 } else {
                     if (sections[i].id == category) {
-                        sections[i].style.display = "block"; // 顯示符合的
+                        sections[i].style.display = "block";
                     } else {
-                        sections[i].style.display = "none";  // 隱藏不符合的
+                        sections[i].style.display = "none";
                     }
                 }
             }
-
-            // 3. 處理按鈕顏色 (讓被點擊的按鈕變色)
             var btns = document.getElementsByClassName("filter-btn");
             for (var i = 0; i < btns.length; i++) {
-                btns[i].classList.remove("active"); // 先把所有按鈕的顏色移除
+                btns[i].classList.remove("active");
                 if (event.target == btns[i]) {
-                    btns[i].classList.add("active"); // 幫被點擊的按鈕加上顏色
+                    btns[i].classList.add("active");
                 }
             }
-            // 特例處理：如果點擊的是 all (因為 all 常常是預設，這裡簡單處理)
-            if(category == 'all') {
-                btns[0].classList.add("active");
-            }
+            if(category == 'all') btns[0].classList.add("active");
         }
     </script>
 
